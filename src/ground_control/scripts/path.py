@@ -32,8 +32,10 @@ def drive():
     while not rospy.is_shutdown():
         
         p = Point()
-        p.x = x[i]
-        p.y = y[i]
+        # p.x = x[i]
+        # p.y = y[i]
+        p.x = 11.0
+        p.y = -0.5
         pub.publish(p)
         i = (i+1) % 100
         r.sleep()

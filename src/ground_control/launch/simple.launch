@@ -1,5 +1,7 @@
 <launch>
-    <include file="$(find husky_gazebo)/launch/husky_empty_world.launch"/>
-    <node name="$(anon controller)" pkg="ground_control" type="drive.py"/>
+    <include file="$(find husky_gazebo)/launch/husky_empty_world.launch">
+        <arg name="world_name" value="/home/lars/Code/COM_ROS/src/ground_control/worlds/maze2.world"/>
+    </include>
     <node name="$(anon path)" pkg="ground_control" type="path.py"/>
+    <node name="$(anon controller)" pkg="ground_control" type="drive.py"/>
 </launch>
